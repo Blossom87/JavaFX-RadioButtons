@@ -54,26 +54,26 @@ public class RadioButtons extends Application {
         RadioButton blueColor = new RadioButton("Blue");
         RadioButton greenColor = new RadioButton("Green");
 
-        Slider redSlider = new Slider();
-        Slider blueSlider = new Slider();
-        Slider greenSlider = new Slider();
-        Slider slOpacity = new Slider();
-   
+        // new Slider (Premier chiffre valeur minimal, valeur max, valeur
+        // d'initialisation)
+        Slider redSlider = new Slider(0, 255, 0);
+        Slider blueSlider = new Slider(0, 255, 0);
+        Slider greenSlider = new Slider(0, 255, 0);
 
         TextArea inputField = new TextArea();
 
         TitledPane parametersPane = new TitledPane("Paramètres :", paneParam);
         parametersPane.setExpanded(true);
         parametersPane.setVisible(false);
-        
+
         TitledPane backgroundParam = new TitledPane("Background :", paneBG);
         backgroundParam.setExpanded(false);
         backgroundParam.setVisible(false);
-        
+
         TitledPane colorParam = new TitledPane("Coleur des caractères :", paneClr);
         colorParam.setExpanded(false);
         colorParam.setVisible(false);
-        
+
         TitledPane caseParam = new TitledPane("Case :", paneCase);
         caseParam.setExpanded(false);
         caseParam.setVisible(false);
@@ -182,7 +182,12 @@ public class RadioButtons extends Application {
             copyInput.setTextFill(textColor);
         });
 
-        
+        // Affichage de cran pour le slider :
+
+        redSlider.setShowTickLabels(true);
+        greenSlider.setShowTickLabels(true);
+        blueSlider.setShowTickLabels(true);
+
         // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         Scene scene = new Scene(radioButtonsMain, 500, 500);
